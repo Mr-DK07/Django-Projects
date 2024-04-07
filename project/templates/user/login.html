@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<style>
+  .bkc{
+    background: url("{% static 'images/bg.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+<div class="text-center fs-2">
+  Log<b class="txt-color">in <i class="fa-regular fa-address"></i></b>
+</div>
+
+<div class="row bkc">
+  <div
+    class="info col-4 mx-auto px-5 my-5 py-5 rounded"
+    style="max-height: 500px; background: rgba(5, 150, 160, 0.3)"
+  >
+    <b> Member Login</b>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="input-group">
+        <i
+          class="input-group-text bg-warning px-4 mt-3"
+          style="max-height: 40px"
+        >
+          <i class="fa-solid fa-user"></i>
+        </i>
+        <input
+          class="form-control mt-3 bg-light"
+          type="email"
+          placeholder="User name..."
+          required
+          name="email"
+        />
+      </div>
+      <div class="input-group">
+        <i
+          class="input-group-text bg-warning px-4 mt-3"
+          style="max-height: 40px"
+        >
+          <i class="fa-solid fa-key"></i>
+        </i>
+        <input
+          class="form-control mt-3 bg-light"
+          type="password"
+          placeholder="Password.."
+          required
+          name="passwd"
+        />
+      </div>
+      <input class="btn bg-warning mt-3" type="submit" value="Login" /> <br />
+      <p>Forgot <p2 class="text-info"> Username / Password ?</p2></p>
+      <p2 class="text-info">Create your account ---</p2>
+    </form>
+  </div>
+</div>
+{% endblock %}

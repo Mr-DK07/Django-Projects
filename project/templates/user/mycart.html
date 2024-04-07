@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+{% if not request.session.user %}
+<script>alert('You have to login first');location.href="/user/login/"</script>
+{% endif %}
+
+{% endblock %}

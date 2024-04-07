@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="text-center fs-2">
+  About <b class="txt-color"> Us <i class="fa-solid fa-address"></i></b>
+</div>
+<div class="row" style="max-height: 700px">
+  <div class="col-sm-6 col-lg-4 mt-5 ps-5">
+    <img
+      src="{% static 'images/about.jpg' %}"
+      style="max-height: 300px"
+      alt=""
+    />
+  </div>
+
+  <div class="col-sm-6 col-lg-8 mt-5 mx-auto" style="line-height: 30px">
+    <p class="fs-3">100x retail in 5 years</p>
+    Imagine needing something when you are at home and getting it before you
+    have tied your shoelaces to step out. We are revolutionizing e-commerce by
+    making the stuff most important to you, available to you in a Zepto of your
+    eye. We want our customers to focus on the more important things for
+    themselves and not need to plan for the little things that life needs on an
+    everyday basis. We are here to get your chores out of your way. Our mission
+    is – “instant commerce indistinguishable from magic”.
+
+    <br />
+    <b style="color: rgb(0, 81, 0)">
+      "Zepto" is owned & managed by "Zepto Commerce Private Limited” (formerly
+      known as Grofers India Private Limited) and is not related, linked or
+      interconnected in whatsoever manner or nature, to “GROFFR.COM” which is a
+      real estate services business operated by “Redstone Consultancy Services
+      Private Limited”</b
+    >
+  </div>
+</div>
+
+{% endblock %}

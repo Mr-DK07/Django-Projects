@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10MinZEPTO</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/all.css' %}" />
+    <link rel="icon" href="{% static 'images/logo.jpg'%}">
+    <style>
+      :root {
+        --bgcolor: linear-gradient(45deg, #ff8800, 60deg, #cc0000);
+        --textcolor: #ff8800;
+        --bgmycolor: #4be0eb;
+      }
+      .t1 {
+        font-size: 15px;
+      }
+      .menu {padding-top: 10px;
+        background: rgb(130, 226, 5);
+        max-height: 110px;
+      }
+      .bg-color {
+        background: var(--bgcolor) !important;
+      }
+      .txt-color {
+        color: var(--textcolor);
+      }
+      .fa-brands {
+        padding: 3px;
+      }
+      .fa-brands:hover {
+        background: rgb(250, 251, 251);
+        color: #1254b7;
+        padding: 5px;
+        border-radius: 15px;
+        transition: all 0.8s;
+      }
+      .b {
+        background: var(--bgcolor);
+      }
+      img {
+        background-size: cover;
+      }
+      .ufooter {
+        max-height: 400px;
+        background: #cefafc;
+      }
+      .bfooter {
+        background: #000;
+        color: #4be0eb;
+      }
+      .btn1:hover {
+        background: #dcded7;
+        border-radius: 5px;
+        transition: all 0.6s;
+      }
+      .contactus {
+        height: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+    <div class="container-fluid">
+      <div class="row t1 text-bg-dark">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <i class="fa-solid fa-phone"></i> +91 8081090324
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <i class="fa-solid fa-envelope"></i>Email-Id: dk@gmail.com
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          An ISO 1992:2023 Certified Company.
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12" style="color: white">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+
+      <!--start menu-->
+
+      <div class="menu row">
+        <div class="logo col-sm-4 col-lg-2 col-md-3 fs-4 pt-2">
+          <b>10Min</b
+          ><b class="text-light"
+            >ZEPTO<i class="fa-solid fa-cart-shopping"></i
+          ></b>
+        </div>
+        <div class="col-sm-3 col-lg-7 col-md-4">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler bg-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item btn1">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="/user/index/"
+                      ><i class="fa-solid fa-home"></i> Home</a
+                    >
+                  </li>
+                  <li class="nav-item btn1">
+                    <a class="nav-link active" href="/user/aboutus/"
+                      ><i class="fa-solid fa-user"></i> About Us</a
+                    >
+                  </li>
+                  <li class="nav-item btn1">
+                    <a class="nav-link active" href="/user/products/"
+                      ><i class="fa-solid fa-shopping-cart"></i> Products</a
+                    >
+                  </li>
+                  <li class="nav-item btn1">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="/user/contactus/"
+                      ><i class="fa-solid fa-phone"></i> Contact Us</a
+                    >
+                  </li>
+                  <li class="nav-item btn1">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="/user/signup/"
+                      ><i class="fa-solid fa-circle-user"></i>SignUp</a
+                    >
+                  </li>
+
+                  {% if request.session.user %}
+                  <li class="nav-item btn1">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="/user/logout/"
+                      ><i class="fa-solid fa-lock"></i>Logout</a
+                    >
+                  </li>
+                  {% else %}
+                  <li class="nav-item btn1">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="/user/login/"
+                      ><i class="fa-solid fa-lock"></i>Login</a
+                    >
+                  </li>
+                  {% endif %} {% if request.session.user %}
+
+                  <li>
+                    <a href="/user/profile/" class="nav-link active"
+                      >{{request.session.username}}
+                      <img
+                        src="/{{request.session.userpic}}"
+                        style="height: 35px;width: 35px; border-radius: 50%"
+                        alt=""
+                        class="img-thumbnail"
+                      />
+                    </a>
+                  </li>
+                  {% else %}
+
+                  <li>
+                    <a href="#" class="nav-link active"
+                      >Default User<img
+                        src="{% static 'images/aboutus.png'%}"
+                        style="max-height: 30px; border-radius: 50%"
+                        alt=""
+                        class="img-thumbnail"
+                      />
+                    </a>
+                  </li>
+
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="col-sm-5 col-lg-3 col-md-5 mt-2">
+          {% if request.session.user %}
+          <a href="/user/cartitems/" class="btn bg-light" style="max-height: 40px;"
+            >Cart <i class="fa-solid fa-cart-shopping"></i
+            >
+            <p class="badge text-bg-dark">{{request.session.cartitems}}</p>
+          </a>
+
+          <a href="/user/orderlist/" class="btn bg-light ms-3" style="max-height: 40px;"
+            >My Orders<i class="fa-solid fa-truck-fast"></i
+            >
+          </a>
+            {% else %}
+            <a href="/user/cartitems/" class="btn bg-light"
+            >Cart <i class="fa-solid fa-cart-shopping"></i
+            >
+            <b class="badge text-bg-dark">{{request.session.cartitems}}</b>
+          </a>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <!--end menu-->
+
+      <div class="row">
+        <div class="col-sm-12" style="min-height: 500px;">
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+      <div class="row ufooter p-3" style="max-height: 300px; background: #09ef52;">
+        <div class="col-3"><b class="pt-2"> Useful Links</b></div>
+        <div class="col-9"><b>Categories</b></div>
+
+        <div class="col-sm-1 pt-3">
+          About <br />
+          Career <br />
+          Blog <br />
+          Press <br />
+          Lead <br />
+          Value <br />
+        </div>
+        <div class="col-sm-2 pt-3">
+          FAQs <br />
+          Privacy <br />
+          Terms <br />
+          Contact <br />
+          Seller <br />
+          Deliver <br />
+        </div>
+        <div class="col-sm-3 pt-3">
+          Vegetables<br />
+          Fruits <br />
+          Munchies <br />
+          Cold Drinks <br />
+          Frozen Food <br />
+          Health Drinks <br />
+        </div>
+        <div class="col-sm-3 pt-3">
+          Dry Fruits <br />
+          Paan Corner <br />
+          Baby Care <br />
+          Pharma & Wellness <br />
+          Cleaning Items <br />
+        </div>
+        <div class="col-sm-3 pt-3">
+          Home & Office <br />
+          Personal Care <br />
+          Ice Creams<br />
+          Sweet Tooth <br />
+          Atta,Rice&Dal <br />
+          Bakery & Biscuits <br />
+        </div>
+      </div>
+      <div class="row bfooter py-3">
+        <div class="col-4 mb-3 ps-5">
+          Zepto Commerce Private Limited (formerly known as Grofers India
+          Private Limited), 2016-2023
+        </div>
+        <div class="col-4 mb-3">
+          <b> Download App </b>
+          <a href="https://www.apple.com/in/app-store/" class="btn"
+            ><img
+              src="{% static 'images/ap.jpg' %}"
+              style="max-width: 100px"
+              alt=" App Store "
+          /></a>
+          <a
+            href="https://play.google.com/store/games?device=windows"
+            class="btn"
+            ><img
+              src="{% static 'images/gp.jpg' %}"
+              style="max-width: 100px"
+              alt=" Play Store "
+          /></a>
+        </div>
+        <div class="col-4 mb-3 fs-2">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+        <p class="px-5 text-center">
+          “10MinZepto” is owned & managed by "Zepto Commerce Private Limited"          
+          linked to “GROFFR.COM” which is a real estate services business operated by
+          “Redstone Consultancy Services Private Limited”.
+        </p>
+        <div class="row">
+          <div class="col-sm-6 text-light"><a href="/user/index/" target="_blank">&copy;10MinZEPTO.Pvt.Ltd.</a></div>
+          <div class="col-sm-6 text-end text-light">Designed & developed by: <a href="/user/adminprofile/"> Er DK</a> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

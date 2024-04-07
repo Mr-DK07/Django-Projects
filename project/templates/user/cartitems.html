@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="text-center fs-2">Cart <b class="txt-color">Items</b><i class="fa-solid fa-cart-shopping"></i
+    ></div>
+{% if not request.session.user %}
+<script>alert('You have to login first');location.href='/user/login/'</script>
+{% endif %}
+<div class="row">
+<div class="col-sm-8 mx-auto mb-3" style="background: rgb(37, 218, 5);">
+<!--start card-->
+{% for i in cartdata %}
+<div class="card my-3">
+    <div class="row g-0">
+      <div class="col-md-2">
+        <img src="/{{i.product_picture}}" class="img-fluid rounded-start" style="height: 130px;width: 130px;" alt="...">
+      </div>
+      <div class="col-md-10">
+        <div class="card-body">
+          <table>
+            <tr>
+                <th>&nbsp;&nbsp;Cart Id </th>
+                <th>&nbsp;&nbsp;&nbsp; Product </th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Quantity </th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price </th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Subtotal </th>
+                <th>&nbsp;&nbsp;&nbsp;Added Date </th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel </th>
+                
+            </tr>
+            <tr>
+                <td>Zepto{{i.id}}</td>
+                <td>
+                  <br><h6 style="margin: 0px;padding: 0px;">&nbsp;&nbsp;&nbsp;{{i.product_name}}</h6>
+                    <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;({{i.pw}})</small>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.quantity}} Item</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.price}}/-</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.total_price}}/-</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.added_date}}</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/cartitems?cid={{i.id}}" class="btn btn-danger btn-sm">Remove <i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <a href="/user/order?msg=1" class="btn btn-primary my-3">Place Order</a>
+<!--endcard-->
+
+</div>
+</div>
+{% endblock %}

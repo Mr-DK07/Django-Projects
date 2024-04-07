@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<style>
+  .bkc{ 
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+</style>
+
+<div class="row ">
+  <div class=" col-sm-12 col-md-6 col-lg-4 mx-auto pt-4 pb-5 px-5 mt-5  rounded bkc tr" style="max-height: 500px;box-shadow: 0px 0px 5px 2px rgb(190, 188, 188);">
+    <b class="ms-5 fs-5 mb-5"> Member Login <i class="fa-solid fa-right-to-bracket"></i></b>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="input-group">
+        <i
+          class="input-group-text bg-primary text-light px-4 mt-3"
+          style="max-height: 40px"
+        >
+          <i class="fa-solid fa-user"></i>
+        </i>
+        <input
+          class="form-control mt-3 bg-light"
+          type="email"
+          placeholder="Username/email Id"
+          required
+          name="email"
+        />
+      </div>
+      <div class="input-group">
+        <i
+          class="input-group-text bg-primary text-light px-4 mt-3"
+          style="max-height: 40px"
+        >
+          <i class="fa-solid fa-key"></i>
+        </i>
+        <input
+          class="form-control mt-3 bg-light"
+          type="password"
+          placeholder="password.."
+          required
+          name="password"
+        />
+      </div>
+      <input class="btn bg-success text-light my-3" type="submit" value="Login"/> <br/>
+      <p class="mb-0 text-dark">Forgot<a href="#" style="color: rgb(74, 58, 216);"> Username / Password ?</a></p>
+      <a href="/user/signup/" style="color: rgb(74, 58, 216);">Create your account ---</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

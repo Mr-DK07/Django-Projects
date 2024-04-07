@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<style>
+  .form-control {
+    height: 45px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .bkc{
+    background:rgb(1, 1, 59);
+    padding-left: 100px;
+  }
+  .get{
+    background: url("{% static 'image/b2.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+  }
+  .info{
+    transform: translateY(-120px);
+  }
+</style>
+
+<div class="container-fluid">
+<div class="row get">
+  <div class="col-sm-10 text-light mx-auto mt-5" data-aos="fade-right">
+    <b class="fs-2">Get in touch</b>
+    <p>Want to get in touch? We'd love to here form you. Here's how <br>you can reach us...</p>
+  </div>
+</div>
+<div class="row" data-aos="fade-up">
+  <div class="col-sm-10 mx-auto mt-4 info">
+    <div class="row mx-auto" style="box-shadow: 0px 0px 6px 6px rgb(187, 185, 185);">
+      <div class="col-sm-4 text-light bkc p-3 ps-5">
+        <b class="fs-4">Contact Information</b>
+        <p class="mt-5"><i class="fa-solid fa-phone"></i> +91 8081090324</p>
+        <p><i class="fa-solid fa-envelope"></i> motel003@gmail.com</p>
+        <p class="mb-5"><i class="fa-solid fa-location-dot"></i> 213/Vikas Nagar, Lucknow, <br>  &nbsp;&nbsp;&nbsp;Uttar Pradesh, India</p>
+        <div class="text-center mt-5">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-twitter"></i>
+      </div> 
+      </div>
+      <div class="col-sm-8 px-4 pe-5 pt-2 bg-light">
+        <b class="fs-4">Send Us a Message! <i class="fa-solid fa-envelope text-primary"></i></b>
+        <form action="" method="post">
+          {% csrf_token %} Name:
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            placeholder="Name"
+            required
+          />
+         
+          Mobile:
+          <input
+            type="number"
+            name="mobile"
+            class="form-control"
+            placeholder="Mobile"
+            required
+          />
+          Message:
+          <textarea
+            name="message"
+            class="form-control mb-3"
+            cols="30"
+            rows="10"
+            style="min-height: 80px; resize: none"
+            placeholder="Type here..."
+          ></textarea>
+          <input type="submit" value="Send" class="btn text-light bg-primary mb-3" />
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

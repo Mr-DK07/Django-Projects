@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<style>
+  .form-control{
+    border: 1px solid rgb(198, 182, 182);
+  }
+  .tr:hover{
+        transform: scale(1.03);
+        transition: all 0.5s;
+    }
+    .tr1:hover{
+        transform: scale(1.15);
+        transition: all 0.5s;
+    }
+</style>
+
+<div class="text-center fs-5 mt-2">
+  <b>Create an account <i class="fa-solid fa-user-plus"></i></b>
+</div>
+
+<div class="row">
+  <div
+    class="col-sm-10 col-lg-4 mx-auto py-2 ">
+    
+<form action="" method="post" enctype="multipart/form-data"
+autocomplete="off" class="row g-0 rounded p-2">
+  {% csrf_token %}
+
+  <div class="col-sm-12 col-lg-12">
+    <label for="inputName4" class="form-label">Name:</label>
+    <input type="text" name="name" class="form-control" id="inputName4" required>
+  </div>
+ 
+  <div class="col-sm-12 col-lg-12">
+    <label for="inputEmail4" class="form-label">Email:</label>
+    <input type="email" name="email" class="form-control" id="inputEmail4" required>
+  </div>
+  <div class="col-sm-12 col-lg-12">
+    <label for="inputPassword4" class="form-label">Password:</label>
+    <input type="password" name="password" class="form-control" id="inputPassword4" required>
+  </div>
+  <div class="col-sm-12 col-lg-12">
+    <label for="inputProfile4" class="form-label">Profile:</label>
+      <input type="file" name="profile" class="form-control" required/>
+    </div>
+  <div class="col-sm-12 col-lg-12 mt-2">
+    <div class="form-check">
+      <input class="form-check-input border border-dark" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+       <a href="#" style="font-size: 13px;" required> Accept Term & Conditions!</a>
+      </label>
+    </div>
+  </div>
+  <div class="col-sm-12 col-lg-12">
+    <button type="submit" class="col-sm-12 col-lg-12 btn btn-primary px-4 my-3 tr"><b>Save</b></button>
+  </div>
+  <div class="col-lg-12 mx-auto col-sm-12 text-center text-success ">______ or use one of these options ______
+  </div>
+  <div class="row mt-2">
+  <div class="col-sm-12 col-lg-12 mx-auto text-center">
+    <a  href="#"><img src="{% static 'image/fb1.png'%}" class="tr1" style="max-width: 60px;" alt="Facebook account"></a>
+  
+    <a  href="#"><img src="{% static 'image/ggl1.png'%}" class="tr1" style="max-width: 60px;" alt="Google account"></a>
+  
+    <a  href="#"><img src="{% static 'image/apl.png'%}" class="tr1" style="max-width: 50px;" alt="Apple account"></a>
+  </div>
+  <small class="text-center mt-2">
+    All rights reserved. <br>
+Copyright (2006-2023) – Motel.com™
+  </small>
+</div>
+</form>
+
+</div>
+</div>
+
+{% endblock %}

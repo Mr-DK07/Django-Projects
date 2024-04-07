@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="text-center fs-2">
+  Admin<b class="txt-color"><i class="fa-solid fa-user"></i></b>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4 border border-dark rounded py-4 mt-3" style="padding-left: 110px;">
+    <img
+      src="{% static 'images/dk.jpg' %}"
+      style="border-radius: 50%; max-height: 300px; max-width: 300px"
+      alt=""
+    /> <br>
+    <b>Name: </b> Devendra Kumar <br />
+    <b>Branch: </b> IT <br />
+    <b>Year: </b> 3<sup>rd</sup> Year<br />
+    <b>College: </b> C.S.J.M. AmbedkarNagar <br />
+    <b>Mobile: </b> +91 8081090324<br />
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+{% endblock %}

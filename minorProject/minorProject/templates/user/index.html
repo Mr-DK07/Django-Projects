@@ -1,0 +1,373 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block content %}
+<style>
+    .front{
+        background: url("{% static 'image/front5.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 450px;
+        padding-top: 200px;
+        color: rgb(4, 23, 132);
+        padding-left: 90px;
+    }
+    .search{
+        border: 5px solid greenyellow;
+        height: 70px;
+    }
+    .searchbox{
+        text-align: center;
+        transform: translateY(-35px);   
+    }
+    .deals{
+        background: url("{% static 'image/deals.jpeg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-height: 200px;
+        color: white;
+        border-radius: 5px;
+        padding-top: 25px;
+        padding-left: 25px;
+        box-shadow: var(--box-shadow);
+        
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .next-trip{
+        background: url("{% static 'image/bankok1.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-height: 400px;
+        width: 100%;
+        padding-top: 300px;
+        color: white;
+    }
+    .tr:hover{
+        transform: scale(1.05);
+        transition: all 0.5s;
+    }
+    .tr1:hover{
+        transform: scale(1.02);
+        transition: all 0.5s;
+    }
+    .flag{
+        width: 33px;
+        height: 22px;
+        background: url("{% static 'image/iflag.jpg' %}");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 0 !important;
+        transform: translateY(-3px);
+    } 
+    .bigCity{
+        max-height: 300px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: var(--box-shadow1);
+    }
+     .city{
+        max-height: 300px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: var(--box-shadow1);
+     }
+</style>
+
+<!--Start front-->
+<div class="row">
+<div class="col-12 front">
+    <h1 data-aos="fade-right"><b>Howzat for a perfect stay</b></h1>
+    <p data-aos="fade-right"><b>Search hotels, homes and much more</b></p>
+    <a href="#" class="btn bg-primary px-3 py-2 text-light tr" data-aos="fade-right"><b> Discover More</b></a>
+</div>
+</div>
+
+
+<div class="col-sm-12 col-lg-10 col-md-12 searchbox mx-auto" >
+    <div class="row mx-auto" data-aos="fade-up" style="margin: 0 auto;"> 
+        <div class="col-sm-12 col-lg-3 tr1 bg-light py-3 rounded search"><i class="fa-solid fa-location-dot"></i><a class="text-dark" href="https://www.google.com/maps/@27.1381928,80.8593042,7z?entry=ttu"> Where are you going?</a></div>
+        <div class="col-sm-12 col-lg-5 tr1 bg-light rounded search py-3">No. of Rooms:
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+
+                <button type="button" class="btn box " onclick="funb()" style="color: white;background-color: rgb(7, 50, 243);" > <i class="fa-solid fa-minus"></i></button>
+
+                  <input  type="text" value="1" class="btn box1"  id="day"  readonly class="form-control text-center " style="width: 40px;background-color: lavender;">
+
+                  <button type="button" class="btn box" onclick="funa()" style="color: white; background-color: rgb(7, 50, 243);"><i class="fa-solid fa-plus"></i></button>
+                </div> <br>
+                
+              <script>
+                var x=0;
+                  var txtd=document.getElementById("day");
+                  function funa()
+                  {
+                  x++;
+                  txtd.value=x;
+                  }
+                  function funb()
+                  {
+                  if(x>0)
+                  {
+                  x--
+                  txtd.value=x;
+                  }
+                  }
+              </script>
+
+        </div>
+        <div class="col-sm-12 col-lg-3 tr1 bg-light py-3 rounded  search">No. of Person: 
+           
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn box " onclick="funm()" style="color: white;background-color: rgb(7, 50, 243);" > <i class="fa-solid fa-minus"></i></button>
+                  <input  type="text" value="1" class="btn box1"  id="txtcard"  readonly class="form-control text-center " style="width: 40px;background-color: lavender;">
+                  <button type="button" class="btn box" onclick="funp()" style="color: white; background-color: rgb(7, 50, 243);"><i class="fa-solid fa-plus"></i></button>
+                </div> <br>
+                
+              <script>
+                var i=0;
+                  var txtc=document.getElementById("txtcard");
+                  function funp()
+                  {
+                  i++;
+                  txtc.value=i;
+                  }
+                  function funm()
+                  {
+                  if(i>0)
+                  {
+                  i--
+                  txtc.value=i;
+                  }
+                  }
+              </script>
+        
+        </div>
+        <div class="col-sm-12 col-lg-1 py-3 btn-primary btn text-light rounded search tr">Search</div>
+    </div>
+</div>
+<!--End front-->
+<!--Start Deals-->
+<b class=" fs-3 mt-3">Offers</b>
+<p class=" mt-0">Promotions, deals, and special offers for you</p>
+<div class="row"> 
+    <div class="col-sm-12 col-md-6 col-lg-6 rounded" style=" box-shadow: var(--box-shadow);"  data-aos="fade-right">
+            <div class="row" style="width: 100%;">
+              <div class="col-8" >
+                  <b class="card-title fs-5">Take your longest vacation yet</b>
+                  <p class="card-text">Browse properties offering long-term stays, many at reduced monthly rates.</p>
+                  <a href="#" class="btn bg-primary tr px-3 py-2 text-light"><b> Find a Stay</b></a>
+              </div>
+              <div class="col-4">
+                <img src="{% static 'image/offers.jpeg' %}" class="img-fluid rounded-start ms-4 mt-1 " style="max-height: 220px;width: 100%; border-radius: 5px;" alt="...">
+              </div>
+            </div>
+        </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 deals" data-aos="fade-left">
+        <div class="row" style="width: 100%;">
+        <b>Save 15% with Late Escape Deals</b>
+        <p class="m-0 mt-2">Explore thousands of destinations</p> 
+        <p class="m-0 mb-4"> worldwide and save 15% or more </p>
+    </div>
+        <a href="#" class="btn bg-primary tr mb-3 py-2 text-light"><b> Find Late Escape Deals</b></a>
+        
+    </div>
+</div>
+<!--End Deals-->
+
+<!--Start Trending Destinations-->
+<b class=" mt-3 fs-3" data-aos="fade-up">Trending destinations</b>
+<p class="" data-aos="fade-up">Travelers searching for India also booked these</p>
+
+<div class="row">
+
+    <div class="col-sm-12 col-lg-6 tr1" data-aos="fade-right">
+        <a href="/user/hotels/">
+            <img src="{% static 'image/mumbai.jpg' %}" class="bigCity" alt=""><br>
+            <b class="text-dark fs-4">Mumbai</b> <b class="btn flag"></b>
+        </a>      
+    </div>
+
+    <div class="col-sm-12 col-lg-6 tr1" data-aos="fade-left">
+        <a href="/user/hotels/">
+            <img src="{% static 'image/delhi.jpg' %}" class="bigCity" alt=""><br>
+            <b class="text-dark fs-4">New Delhi </b> <b class="btn flag"></b>
+        </a>    
+    </div>
+</div>
+
+<div class="row mt-3" >
+    <div class="col-sm-12 col-lg-4 tr1" data-aos="fade-right">
+        <a href="/user/hotels/">
+            <img src="{% static 'image/chennai.jpg' %}" class="city" alt=""><br>
+        <b class="text-dark fs-4">Chennai </b> <b class="btn flag"></b></a> 
+    </div>
+    <div class="col-sm-12 col-lg-4 tr1" data-aos="fade-up">
+        <a href="/user/hotels/">
+            <img src="{% static 'image/banglore.jpg' %}" class="city" alt=""><br>
+        <b class="text-dark fs-4">Bangalore </b> <b class="btn flag"></b></a> 
+    </div>
+    <div class="col-sm-12 col-lg-4 tr1" data-aos="fade-left">
+        <a href="/user/hotels/">
+            <img src="{% static 'image/jaipur.jpg' %}" class="city" alt=""><br>
+        <b class="text-dark fs-4">Jaipur </b> <b class="btn flag"></b></a> 
+    </div>
+</div>
+<!--End Trending Destinations-->
+
+
+<!--Start Explore India-->
+<b class="fs-3 mt-3 " data-aos="fade-up">Explore India</b>
+<p class="mb-2" data-aos="fade-up">These popular destinations have a lot to offer</p>
+<div class="row owl-carousel owl-theme" data-aos="fade-up">
+    {% for i in edata %}
+    <div class="col-sm-4 col-md-3 col-lg-2 tr mt-2">
+        <a href="/user/hotels/">
+            <img src="/{{i.epic}}" style="height: 160px;width: 180px; border-radius: 5px; box-shadow: 1px 2px 3px 1px rgb(212, 210, 210);" alt=""><br>
+            <b class="text-dark fs-5 mb-0">{{i.ename}}</b>
+            <p>{{i.eno}}</p>
+        </a>           
+    </div>
+    {% endfor %}
+</div>
+<!--End Explore India-->
+
+<!--Start Property type-->
+<b class="fs-3 mt-3 mb-2 " data-aos="fade-up">Browse by property type</b>
+
+<div class="row" data-aos="fade-up">
+    {% for i in pdata %}
+    <div class="col-sm-6 col-md-4 col-lg-3 my-2 tr">
+        <a href="/user/hotels/"><img src="/{{i.ppic}}" style="max-height: 300px;max-width: 300px; border-radius: 5px; box-shadow: 1px 2px 3px 3px rgb(192, 176, 176);" alt=""><br>
+        <b class="text-dark fs-5">{{i.pname}}</b></a>
+    </div>
+    {% endfor %}
+</div>
+<!--Start Property type-->
+
+<!--Start Easy Trip-->
+<b class="fs-3 mt-3 " data-aos="fade-up">Quick and easy trip planner</b>
+<p class="" data-aos="fade-up">Pick a vibe and explore the top destinations in India</p>
+<div class="row" data-aos="fade-up">
+    {% for i in etdata %}
+    <div class="col-sm-6 col-md-3 col-lg-2 tr">
+        <a href="/user/hotels/"><img src="/{{i.etpic}}" style="max-height: 280px;max-width: 180px; border-radius: 5px; box-shadow: 1px 2px 3px 1px rgb(212, 210, 210);" alt=""><br>
+        <b class="text-dark fs-5">{{i.etname}}</b></a>
+        <p>{{i.etdis}}</p>
+    </div>
+    {% endfor %}
+</div>
+<!--End Easy Trip-->
+
+<!--Start Next Trip-->
+<b class="fs-3 mb-2 mt-3 " data-aos="fade-up">Get inspiration for your next trip</b>
+<div class="row" data-aos="fade-up">
+    <a href="/user/hotel/" class="text-light">
+    <div class="col-sm-12 col-lg-6 col-md-12 mt-3 tr1">
+        <div class="next-trip rounded">
+        <b class="fs-3">6 incredible Bangkok rooftop bars</b>
+        <p><b>Amazing city views, cocktails, and world-class cuisine.</b></p></a>
+    </div>
+    
+    </div>
+    {% for i in ntdata %}
+    <div class="col-sm-6 col-lg-3 col-md-6 mt-3 tr1">
+        <a href="/user/hotels/">
+            <div class="card" style="border: none; ">
+                <img src="/{{i.ntpic}}" class="card-img-top rounded" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.ntname}}</h5>
+                  <p class="card-text">{{i.ntabout}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+<!--End Next Trip-->
+
+<!--Start Unique Properties-->
+    <b class="fs-3 mt-5" data-aos="fade-up">Stay at our top unique properties</b>
+    <p class="" data-aos="fade-up">From castles and villas to boats and igloos, we have it all</p>
+
+    <div class="row" data-aos="fade-up">
+        {% for i in updata %}
+        <div class="col-sm-6 col-lg-3 col-md-4 mt-2 tr">
+            <a href="/user/hotel/">
+            <div class="card" style="box-shadow: var(--box-shadow);">
+                <img src="/{{i.uppic}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="card-title"><b>{{i.upname}}</b></h6>
+                  <p class="card-text mb-1" style="font-size: 13px;">{{i.uplocation}}</p>
+                  <p class="btn btn-primary mt-2">{{i.uprating}}</p> {{i.upreviews}}
+                </div>
+              </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+<!--End Unique Properties-->
+
+<!--Start Homes Guest-->    
+    <b class="fs-3 mt-3 mb-2 " data-aos="fade-up">Homes guests love</b> 
+    <div class="row" data-aos="fade-up">
+        {% for i in hgdata %}
+        <div class="col-sm-6 col-lg-3 col-md-4 mt-2 tr">
+            <a href="/user/hotel/">
+            <div class="card" style="box-shadow: var(--box-shadow);">
+                <img src="/{{i.hgpic}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="card-title"><b>{{i.hgname}}</b></h6>
+                  <p class="card-text mb-1" style="font-size: 12px;">{{i.hglocation}}</p>
+                  <p class="btn btn-primary mt-2"> {{i.hgrating}} </p> <small class="text-success"> {{i.hgreviews}} + </small> 
+
+                  <p class="text-end mt-1 mb-0" style="font-size: 14px;">Starting from &nbsp;<b> <i class="fa-solid fa-indian-rupee-sign"></i> {{i.hgprice}}</b></p>
+                </div>
+              </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+<!--End Homes Guest-->  
+
+<!--Start footer -->  
+    <div class="row mt-3 ms-4" data-aos="fade-up">
+        <div class="card mb-3" style="max-width: 1200px; max-height: 450px;">
+            <div class="row g-0">
+              <div class="col-sm-4 col-lg-3" data-aos="fade-right">
+                <img src="{% static 'image/globe.png' %}" class="img-fluid rounded-start ms-5" style="max-height: 200px;" alt="...">
+              </div>
+              <div class="col-sm-8 col-lg-7">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Get instant discounts</b></h5>
+                  <p class="card-text">Just sign into your Motel.com account and look for the blue Genius logo to save</p>
+            <div class="row" data-aos="fade-down">
+                <div class="col-sm-4 col-lg-2">
+                    <a class="nav-link active btn bg-light tr text-primary py-2 my-2 border border-primary" aria-current="page" href="/user/signup/" ><b>Register</b></a>
+                </div>
+                  
+                <div class="col-sm-4 col-lg-2">
+                  <a class="nav-link active btn tr bg-light text-primary py-2 my-2" aria-current="page" href="/user/login/"><b>Sign in</b></a>
+                </div>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="row text-center text-light pt-5 pb-4" data-aos="fade-up" style="background: #080448;">
+        <h3>Save time, save money!</h3>
+        <p>Sign up and we'll send the best deals to you</p>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5 mt-2" data-aos="fade-right"><input class="form-control py-3" type="email" placeholder="Your email address"></div>
+        <div class="col-sm-1 mt-2 tr" data-aos="fade-left"><input type="submit" value="Subscribe" class="bg-primary rounded py-3 px-3 mb-3 text-light border border-primary">
+        </div>
+    </div>
+<!--End footer-->  
+
+
+{% endblock %}

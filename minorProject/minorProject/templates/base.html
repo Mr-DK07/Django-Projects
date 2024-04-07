@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>www.motel.com</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/all.css' %}" />
+    <link rel="icon" href="{% static 'image/b1.jpg'%}" />
+    <style>
+      :root {
+        --bgcolor: linear-gradient(45deg, rgb(86, 15, 167), rgb(140, 5, 5));
+        --textcolor: #ff8800;
+        --bgmycolor: #4be0eb;
+        --box-shadow: 1px 1px 3px 1px rgb(185, 183, 183);
+        --box-shadow1: 1px 2px 3px 1px rgb(92, 91, 91);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .menu {
+        background: blueviolet !important;
+      }
+
+      .bg-color {
+        background: var(--bgcolor) !important;
+      }
+
+      .txt-color {
+        color: var(--textcolor);
+      }
+
+      .fa-brands {
+        padding: 3px;
+      }
+
+      .fa-brands:hover {
+        transition: all 1s;
+        background: rgb(250, 251, 251);
+        color: #07a6e5;
+        border-radius: 50px;
+      }
+
+      .b {
+        background: var(--bgcolor);
+      }
+
+      img {
+        background-size: cover;
+      }
+
+      .ufooter {
+        max-height: 400px;
+        background: #cefafc;
+      }
+
+      .bfooter {
+        background: #001b22;
+        color: #4be0eb;
+      }
+
+      .btn1:hover {
+        border-radius: 5px;
+        transition: all 0.4s;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .tr:hover {
+        transform: scale(1.05);
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+    <div class="container-fluid">
+      <!--start menu-->
+
+      <div class="menu row">
+        <div class="logo col-sm-12 col-lg-3 fs-2">
+          <b class="text-light"> MOTEL</b><b style="color: #ff8800">.com</b>
+        </div>
+        <div class="col-sm-12 col-lg-9 text-center">
+          <nav class="navbar navbar-expand-lg">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item btn1 tr">
+                  <a
+                    class="nav-link active text-light"
+                    aria-current="page"
+                    href="/user/index/"
+                    ><i
+                      class="fa-solid fa-home animate__animated animate__bounce"
+                    ></i>
+                    Home</a
+                  >
+                </li>
+
+                <li class="nav-item btn1 tr">
+                  <a class="nav-link active text-light" href="/user/hotels/"
+                    ><i class="fa-solid fa-bed"></i> Hotels</a
+                  >
+                </li>
+                <li class="nav-item btn1 tr">
+                  <a
+                    class="nav-link active text-light"
+                    aria-current="page"
+                    href="/user/contactus/"
+                    ><i class="fa-solid fa-circle-info"></i> Support</a
+                  >
+                </li>
+                <li class="nav-item btn1 tr">
+                  <a class="nav-link active text-light" href="/user/aboutus/"
+                    ><i class="fa-solid fa-user-group"></i> About Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!--start button-->
+            <span>
+              <a
+                class="nav-link active btn bg-light text-primary p-2 tr"
+                aria-current="page"
+                href="/user/signup/"
+                ><b>Register</b></a
+              >
+            </span>
+
+            {% if request.session.user %}
+            <span>
+              <a
+                class="nav-link active btn bg-light text-danger p-2 ms-2 tr"
+                aria-current="page"
+                href="/user/logout/"
+                ><b>Logout</b></a
+              >
+            </span>
+            {% else %}
+            <span>
+              <a
+                class="nav-link active btn bg-light text-primary p-2 ms-2 tr"
+                aria-current="page"
+                href="/user/login/"
+                ><b>Sign in</b></a
+              >
+            </span>
+            {% endif %} {% if request.session.user %}
+            <span>
+              <a
+                href="/user/useraccount/"
+                class="nav-link active text-light my-3 ms-2"
+              >
+                {{request.session.username}}
+                <img
+                  src="/{{request.session.userpic}}"
+                  style="height: 35px; width: 35px; border-radius: 50px"
+                  alt=""
+                  class="img-thumbnail"
+                />
+              </a>
+            </span>
+            {% else %}
+            <span>
+              <a href="#" class="nav-link active text-light my-3 ms-2"
+                > User
+                <img
+                  src="{% static 'image/aboutus.png'%}"
+                  style="max-height: 30px; border-radius: 50%"
+                  alt=""
+                  class="img-thumbnail"
+                />
+              </a>
+            </span>
+
+            {% endif %}
+          </nav>
+        </div>
+      </div>
+      <!--end button-->
+
+      <!--end menu-->
+
+      <div class="row">
+        <div class="col" style="min-height: 500px">
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+      <div class="row ufooter my-3" data-aos="fade-up">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227821.98709944892!2d80.77769534152816!3d26.848902831975263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1696528825648!5m2!1sen!2sin"
+          width="600"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="row bfooter">
+        <div class="col-sm-3 my-2 ps-4">
+          <a href="/user/index/" style="color: #4be0eb" target="_blank"
+            >Copyright &copy; Motel.com.Pvt.Ltd.<sup style="font-size: 9px"
+              >TM </sup
+            ><br />
+            All rights reserved.
+          </a>
+        </div>
+        <div class="col-sm-4 my-2">
+          <b> Download App </b>
+          <a href="https://www.apple.com/in/app-store/" class="btn"
+            ><img
+              src="{% static 'image/ap.jpg' %}"
+              style="max-width: 100px"
+              alt=" App Store "
+          /></a>
+          <a
+            href="https://play.google.com/store/games?device=windows"
+            class="btn"
+            ><img
+              src="{% static 'image/gp.jpg' %}"
+              style="max-width: 100px"
+              alt=" Play Store "
+          /></a>
+        </div>
+        <div class="col-sm-2 my-2 fs-3 text-center">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+        <div class="col-sm-3 mt-3">
+          Designed & developed by:
+          <a class="text-primary" href="/user/team/"> Our Team</a>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
+    <script>
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 5,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

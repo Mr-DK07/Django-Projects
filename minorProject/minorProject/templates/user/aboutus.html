@@ -1,0 +1,86 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<style>
+  .map{
+        background: url("{% static 'image/map2.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-height: 600px;
+        font-weight: 400;
+        color: white;
+        justify-content: center;
+  }
+  .tr1:hover{
+        transform: scale(1.02);
+        transition: all 0.3s;
+    }
+</style>
+
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-lg-4 col-md-12 tr1">
+      <img src="{% static 'image/front5.jpg' %}" style="max-height: 400px;width: 100%;margin-top: 105px;border-radius: 5px;" alt="">
+    </div>
+    <div class="col-sm-12 col-lg-8 col-md-12 pe-5 text-left mt-3">
+      <div class="fs-2 my-3">
+        About Motel.com<sup><i class="fa-solid fa-trademark fs-5"></i></sup>
+      </div>
+      Founded in 1996 in Amsterdam, Motel.com has grown from a small Dutch start-up to one of the world’s leading digital travel companies. Part of Motel Holdings Inc. (NASDAQ: BKNG), Motel.com’s mission is to <b> make it easier for everyone to experience the world.</b> <br><br>
+
+      By investing in technology that takes the friction out of travel, Motel.com seamlessly connects millions of travelers to memorable experiences, a variety of transportation options, and incredible places to stay – from homes to hotels, and much more. As one of the world’s largest travel marketplaces for both established brands and entrepreneurs of all sizes, Motel.com enables properties around the world to reach a global audience and grow their businesses. <br><br>
+      
+      Motel.com is available in 43 languages and offers more than 28 million reported accommodation listings, including over 6.6 million homes, apartments, and other unique places to stay. Wherever you want to go and whatever you want to do, Motel.com makes it easy and supports you with 24/7 customer support.
+    </div>
+  </div>
+
+  <div class="row map mt-4 p-4">
+    Motel.com B.V. is based in Amsterdam in the Netherlands and supported internationally by 198 offices in over 70 countries around the world: Accra - Amman - Amsterdam - Antalya - Athens - Atlanta - Auckland - Bangalore - Bangkok - Barcelona - Beijing - Berlin - Bilbao - Bogotá - Bolzano - Bordeaux - Boston - Bratislava - Brisbane - Bristol - Brussels - Bucharest - Budapest - Buenos Aires - Cairo - Calgary - Cambridge - Cancún - Cape Town - Casablanca - Catania - Chengdu - Chicago - Colombo - Copenhagen - Dallas - Denver - Dubai - Dublin - Dubrovnik - Dusseldorf - Edinburgh - Faro - Florence - Frankfurt am Main - Freiburg im Breisgau - Fukuoka - Grand Rapids - Guadalajara - Guangzhou - Haikou - Hamburg - Hanoi - Helsinki - Heraklion - Ho Chi Minh City - Hong Kong - Honolulu - Houston - Innsbruck - Istanbul - İzmir - Jakarta - Jeddah - Jeju - Johannesburg - Kiev - Koh Samui - Krakow - Kuala Lumpur - Kuta (Bali) - Las Palmas de Gran Canaria - Las Vegas - Lille - Lima - Limassol - Lisbon - Ljubljana - London - Los Angeles - Lyon - Madrid - Málaga - Manchester - Manila - Marrakech - Melbourne - Mexico City - Miami - Milan - Montpellier - Montréal - Moscow - Mumbai - Munich - Naha - Nairobi - Natal - New Delhi - New Orleans - New York - Nice - Norwalk - Orlando - Osaka - Oslo - Palma de Mallorca - Panama City - Paris - Phoenix - Phuket - Porto Alegre - Prague - Qingdao - Rennes - Reykjavík - Riga - Rimini - Rio de Janeiro - Rome - Saint Petersburg - Sallanches - Salzburg - San Diego - San Francisco - San Jose - San Juan - Santiago - Santo Domingo - São Paulo - Sapporo - Seattle - Seoul - Seville - Shanghai - Siem Reap - Singapore - Sochi - Sofia - Sorrento - Split - Stockholm - Strasbourg - Sydney - Taipei - Tallinn - Tbilisi - Tel Aviv - Thessaloníki - Tokyo - Toronto - Trabzon - Vancouver - Venice - Verona - Vienna - Vilnius - Warsaw - Washington - Xi'an - Yangon - Yogyakarta - Zagreb - Zurich
+  <p>
+    Motel.com B.V. is registered with the trade register of the Chamber of Commerce in Amsterdam, the Netherlands, under registration number 31047344. VAT tax registration number is NL805734958B01. Registration number with Dutch Data Protection Authority is 1288246.</p>
+  </div>
+
+<div class="row my-4">
+<div class="col-sm-4 fs-4 text-end">What Motel.com Offers</div>
+<div class="col-sm-6 pe-3">
+<b>Incredible Selection</b><br>
+Whether you want to stay in a chic city apartment, a luxury beach resort, or a cozy B&B in the countryside, Motel.com gives you amazing diversity and variety of choice – all in one place. <br><br>
+
+<b>Low Rates</b><br>
+Motel.com guarantees to offer you the best available rates. And with our promise to price match, you can rest assured that you’re always getting a great deal.<br><br>
+
+<b>Instant Confirmation</b><br>
+At Motel.com, every reservation is instantly confirmed. When you find your perfect stay, a few clicks are all it takes.<br><br>
+
+<b>No Reservation Fees</b><br>
+We don’t charge you any Motel fees or add any administrative charges. And in many cases, your Motel can be canceled free of charge.<br><br>
+
+<b>Secure Motel</b><br>
+We facilitate hundreds of thousands of transactions every day through our secure platform and work to the highest standards to guarantee your privacy. For more details, check our <a href="#">Privacy Statement.</a><br><br>
+
+<b>24/7 Support</b><br>
+Whether you’ve just booked or are already enjoying your trip, our Customer Experience Team is available around the clock to answer your questions and advocate on your behalf in more than 40 languages. Make sure to check out our a
+<a href="#">FAQs</a> for travelers.
+</div>
+
+</div>
+<br><br>
+<div class="row my-4 mt-5">
+  <div class="col-sm-4 fs-4 text-end">Bringing Value to Our Accommodation Partners</div>
+  <div class="col-sm-6 pe-3">
+    At Motel.com, we believe that all great properties deserve to be discovered. That’s why we make it quick and easy for accommodation providers all around the world to market their properties, reach new customers, and grow their business through our platform. <br><br>
+
+For more info and to list your property on Motel.com, see our <br> <a href="#">Accommodation Partner Program</a> and   <a href="#">Supplier Code of Conduct.</a>
+  </div>
+</div>
+
+  <div class="row text-center text-light pt-5 pb-4 my-4" data-aos="fade-up" style="background: #080448;">
+    <h3>Save time, save money!</h3>
+    <p>Sign up and we'll send the best deals to you</p>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-5 mt-2" data-aos="fade-right"><input class="form-control py-3" type="email" placeholder="Your email address"></div>
+    <div class="col-sm-1 mt-2" data-aos="fade-left"><input type="submit" value="Subscribe" class="bg-primary tr1 rounded py-3 px-3 mb-3 text-light border border-primary">
+    </div>
+</div>
+</div>
+
+{% endblock %}

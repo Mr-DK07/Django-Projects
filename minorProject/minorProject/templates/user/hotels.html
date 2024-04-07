@@ -1,0 +1,150 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block content %}
+<style>
+     .front{
+        background: url("{% static 'image/front4.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 450px;
+        width: 100%;
+        padding-top: 200px;
+        color: rgb(3, 5, 96);
+        padding-left: 90px;
+    }
+    .searchbox{
+        text-align: center;
+        transform: translateY(-35px);   
+    }
+    .search{
+        border: 5px solid greenyellow;
+        height: 70px;
+    }
+    .tr:hover{
+        transform: scale(1);
+        transition: all 0.5s;
+    }
+</style>
+
+<div class="row">
+  <div class="col-12 front">
+      <h1 data-aos="fade-right"><b>Howzat for a perfect stay</b></h1>
+      <p data-aos="fade-right"><b>Search hotels, homes and much more</b></p>
+      <a href="#" class="btn bg-primary px-3 py-2 text-light tr" data-aos="fade-right"><b> Discover More</b></a>
+  </div>
+</div>
+
+<div class="col-sm-12 col-lg-10 col-md-12 searchbox mx-auto" >
+  <div class="row mx-auto" data-aos="fade-up" style="margin: 0 auto;"> 
+      <div class="col-sm-12 col-lg-3 tr1 bg-light py-3 rounded search"><i class="fa-solid fa-location-dot"></i><a class="text-dark" href="https://www.google.com/maps/@27.1381928,80.8593042,7z?entry=ttu"> Where are you going?</a></div>
+      <div class="col-sm-12 col-lg-5 tr1 bg-light rounded search py-3">No. of Rooms:
+          
+          <div class="btn-group" role="group" aria-label="Basic example">
+
+              <button type="button" class="btn box " onclick="funb()" style="color: white;background-color: rgb(7, 50, 243);" > <i class="fa-solid fa-minus"></i></button>
+
+                <input  type="text" value="1" class="btn box1"  id="day"  readonly class="form-control text-center " style="width: 40px;background-color: lavender;">
+
+                <button type="button" class="btn box" onclick="funa()" style="color: white;background-color: rgb(7, 50, 243);"><i class="fa-solid fa-plus"></i></button>
+              </div> <br>
+              
+            <script>
+              var x=0;
+                var txtd=document.getElementById("day");
+                function funa()
+                {
+                x++;
+                txtd.value=x;
+                }
+                function funb()
+                {
+                if(x>0)
+                {
+                x--
+                txtd.value=x;
+                }
+                }
+            </script>
+
+      </div>
+      <div class="col-sm-12 col-lg-3 tr1 bg-light py-3 rounded  search">No. of Person: 
+         
+          <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn box " onclick="funm()" style="color: white;background-color: rgb(7, 50, 243);" > <i class="fa-solid fa-minus"></i></button>
+                <input  type="text" value="1" class="btn box1"  id="txtcard"  readonly class="form-control text-center " style="width: 40px;background-color: lavender;">
+                <button type="button" class="btn box" onclick="funp()" style="color: white; background-color: rgb(7, 50, 243);"><i class="fa-solid fa-plus"></i></button>
+              </div> <br>
+              
+            <script>
+              var i=0;
+                var txtc=document.getElementById("txtcard");
+                function funp()
+                {
+                i++;
+                txtc.value=i;
+                }
+                function funm()
+                {
+                if(i>0)
+                {
+                i--
+                txtc.value=i;
+                }
+                }
+            </script>
+      
+      </div>
+      <div class="col-sm-12 col-lg-1 py-3 btn-primary btn text-light rounded search tr">Search</div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-sm-12 col-lg-3 col-md-3">
+
+<ul class="list-group">
+  <li class="list-group-item bg-primary text-light ms-3 text-center" aria-current="true">
+    Choose your destination
+  </li>
+  {% for i in hotelsData %}
+  <a href="/user/hotels?hotelid={{x.id}}" style="text-decoration: none">
+    <li class="list-group-item ms-3 text-center">{{i.Destination}}</li></a>
+
+  {% endfor %}
+</ul>
+</div>
+<!--Start Hotel-->
+<div class="col-9">
+  <div class="row">
+{% for x in hotelsData %}
+<div class=" col-sm-12 col-lg-12 col-md-12 card mb-3 p-2">
+  <div class="row">
+      <div class="col-md-12 col-lg-4 col-sm-12">
+        <a href="/user/hotel/"><img src="/{{x.hotelPicture}}" class="img-fluid rounded" style="height: 300px; width: 100%; " alt="..."></a>
+      </div>
+
+      <div class="col-md-8 col-lg-6 col-sm-12">
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{x.hotelName}}</h5>
+          <p><i class="fa-solid fa-location-dot"></i> {{x.hotelLocation}} {{x.Destination}}</p>
+          <p class="card-text"> {{x.hotelDescription}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-2 col-sm-12 mt-3 text-end">
+        <b>{{x.hotelGrade}}</b> <b class="text-bg-primary p-2" style="border-radius:5px 5px 5px 0px;">{{x.hotelRating}}</b>
+        <p>{{x.hotelReviews}} reviews</p> <br><br>
+        <small>Price from</small><br>
+        <b class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i> {{x.hotelPrice}}</b> <br>
+        <small>per night</small><br> <br>
+        <a href="/user/hotel/" class="btn btn-primary">See Availability</a>
+      </div>
+      
+    </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+<!--End Hotel-->
+</div>
+
+{% endblock %}
