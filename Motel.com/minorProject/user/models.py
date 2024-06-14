@@ -63,9 +63,9 @@ class contact(models.Model):
         return self.Name
     
 class register(models.Model):
-    name=models.CharField(max_length=200,null=True)
-    email=models.CharField(max_length=200,null=True)
-    password=models.CharField(max_length=200,null=True)
+    name=models.CharField(max_length=200)
+    email=models.CharField(max_length=200)
+    password=models.CharField(max_length=200)
     profile=models.ImageField(upload_to='static/userpic/',null=True)
     
 class hotels(models.Model):

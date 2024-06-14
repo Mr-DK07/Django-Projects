@@ -1,136 +1,155 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-    <style>
+<style>
 
-    </style> 
-    <div class="container-fluid">
-        <div class="row">
-             <div class="col-sm-12 col-md-6 col-lg-3 mt-2 pt-2" style="background: rgb(60, 255, 0);max-height: 665px;"><h4 class="mb-3">Search</h4>
-                <form action="" class="form-control farm">
-                Destination/property name
-            <input type="text" class="form-control">
-            Check-in date:
-            <input type="date" class="form-control">
-            Check-out date:
-            <input type="date" class="form-control">
-            No. of person: 
-            <div class="btn-group col-lg-3  my-3 ms-4" role="group" aria-label="Basic example">
-              <button type="button" class="btn box " onclick="funm()" style="color: white;background-color: rgb(7, 50, 243);" > <i class="fa-solid fa-minus"></i></button>
-                <input  type="text" value="1" class="btn box1"  id="txtcard"  readonly class="form-control text-center " style="width: 40px;background-color: lavender;">
-                <button type="button" class="btn box" onclick="funp()" style="color: white; background-color: rgb(7, 50, 243);"><i class="fa-solid fa-plus"></i></button>
-              </div> <br>
-              
-            <script>
-              var i=0;
-                var txtc=document.getElementById("txtcard");
-                function funp()
-                {
-                i++;
-                txtc.value=i;
-                }
-                function funm()
-                {
-                if(i>0)
-                {
-                i--
-                txtc.value=i;
-                }
-                }
-            </script>
+</style>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3 mt-2 pt-2" style="background: rgb(60, 255, 0);max-height: 685px;">
+      <h4 class="mb-3">Search</h4>
+      <form action="" class="form-control farm">
+        Destination/property name
+        <input type="text" class="form-control">
+        Check-in date:
+        <input type="date" class="form-control">
+        Check-out date:
+        <input type="date" class="form-control">
+        No. of person:
+        <div class="btn-group col-lg-3  my-3 ms-4" role="group" aria-label="Basic example">
+          <button type="button" class="btn box " onclick="funm()"
+            style="color: white;background-color: rgb(7, 50, 243);"> <i class="fa-solid fa-minus"></i></button>
+          <input type="text" value="1" class="btn box1" id="txtcard" readonly class="form-control text-center "
+            style="width: 40px;background-color: lavender;">
+          <button type="button" class="btn box" onclick="funp()"
+            style="color: white; background-color: rgb(7, 50, 243);"><i class="fa-solid fa-plus"></i></button>
+        </div> <br>
 
-          <p>Price per night: <b class="text-success"> <i class="fa-solid fa-indian-rupee-sign"></i>5,654</b></p>
-          <p>Total Price: <b class="text-success"> <i class="fa-solid fa-indian-rupee-sign"></i>15,654</b></p>
-          
-          <button class="btn bg-primary text-light ms-5"><a href="/user/userdetails/" class="text-light">I'll Reserve</a></button>
-        </form>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227821.98709944892!2d80.77769534152816!3d26.848902831975263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1696528825648!5m2!1sen!2sin" width="100%" height="30%" style="border:0; border-radius:10px; margin-block: 10px; " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-           
-            <div class="col-sm-12 col-md-6 col-lg-9 ">
-               
-                <span class="bg-warning rounded-pill px-2 pb-1">new to booking.com</span>
-                <h2>{{x.hotelName}}</h2>
-                <i class="fa-solid fa-location-dot"></i> harchandpuravas devaliya, 303007 Jaipur, India.
-  
-                <div class="row mt-3" style="display: flex;">
-                    <div class="col-4" style="display: grid;">
-                        <img src="{% static 'hotelspic/31204963.jpg'%}" style="height:195px;width: 300px;" alt="">
-                        
-                        <img src="{% static 'image/45450058.jpeg'%}" style="height: 195px;width: 300px;" alt="">
-                        
-                    </div>
-                    <div class="col-5 mb-3"><img alt="" class="b"  src="{% static 'image/b2.jpg'%}"  style="max-height: 405px; max-width: 600px;"/>
-                    </div>
-                </div>
+        <script>
+          var i = 0;
+          var txtc = document.getElementById("txtcard");
+          function funp() {
+            i++;
+            txtc.value = i;
+          }
+          function funm() {
+            if (i > 0) {
+              i--
+              txtc.value = i;
+            }
+          }
+        </script>
 
-                <div class="row" style="display:flex;">
-                   <img src="{% static 'image/front4.jpg'%}" style="max-height: 200px; max-width:233px;" alt="">
-                   
-                   <img src="{% static 'image/front.jpg'%}" style="max-height: 200px; max-width:233px;" alt="">
-                   
-                   <img src="{% static 'image/b.jpg'%}" style="max-height: 200px; max-width:233px;" alt="">
-                   
-                   
-                   <img src="{% static 'hotelspic/87428762_ZLaCiZL.jpg'%}" style="max-height: 200px; max-width:225px;" alt="">
-                   
-                </div>
-            </div>
-          
+        <p>Price per night: <b class="text-success"> <i class="fa-solid fa-indian-rupee-sign"></i>5,654</b></p>
+        <p>Total Price: <b class="text-success"> <i class="fa-solid fa-indian-rupee-sign"></i>15,654</b></p>
+
+        <button class="btn bg-primary text-light ms-5"><a href="/user/userdetails/" class="text-light">I'll
+            Reserve</a></button>
+      </form>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227821.98709944892!2d80.77769534152816!3d26.848902831975263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1696528825648!5m2!1sen!2sin"
+        width="100%" height="32%" style="border:0; border-radius:5px; margin-block: 10px; " allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-9 ">
+
+      <span class="bg-warning rounded-pill px-2 pb-1">new to booking.com</span>
+      <h2>{{x.hotelName}}</h2>
+      <i class="fa-solid fa-location-dot"></i> harchandpuravas devaliya, 303007 Jaipur, India.
+
+      <div class="row mt-3" style="display: flex;">
+        <div class="col-4" style="display: grid;">
+          <img src="{% static 'hotelspic/95058973.jpg'%}" style="height:195px;width: 300px;" alt="">
+
+          <img src="{% static 'hotelspic/223496641.jpg'%}" style="height: 195px;width: 300px;" alt="">
+
         </div>
+        <div class="col-5 mb-3"><img alt="" class="b" src="{% static 'hotelspic/329245845.jpg'%}"
+            style="max-height: 405px; width: 615px;" />
+        </div>
+      </div>
+
+      <div class="row" style="display:flex;">
+        <img src="{% static 'homeguestpic/64768746_fmHeXqo_SjHCFFY.jpg'%}" style="max-height: 200px; max-width:245px;" alt="">
+
+        <img src="{% static 'hotelspic\45450084.jpeg'%}" style="max-height: 200px; max-width:245px;" alt="">
+
+        <img src="{% static 'hotelspic\524520707_NpwTkUY.jpg'%}" style="max-height: 200px; max-width:245px;" alt="">
+
+        <img src="{% static 'hotelspic/87428762_ZLaCiZL.jpg'%}" style="max-height: 200px; max-width:245px;" alt="">
+
+      </div>
+    </div>
+
+  </div>
 
 
-        <div class="row mt-3">
-          <div class="col-12 m-3">
-<p>Situated in Jaipur, 5.3 km from Govind Dev Ji Temple, Hotel Signature Inn features accommodation with a terrace, free private parking and a restaurant. With free WiFi, this 3-star hotel offers room service and a 24-hour front desk. The property is non-smoking and is located 5.9 km from Birla Mandir Temple, Jaipur.</p>
-<p>Guest rooms in the hotel are fitted with a flat-screen TV. The rooms have a private bathroom, free toiletries and bed linen.
-</p>
-<p>City Palace is 10 km from Hotel Signature Inn, while Jantar Mantar, Jaipur is 10 km from the property. 
-  The nearest airport is Jaipur International Airport, 4 km from the accommodation.</p>
+  <div class="row mt-3">
+    <div class="col-12 m-3">
+      <p>Situated in Jaipur, 5.3 km from Govind Dev Ji Temple, Hotel Signature Inn features accommodation with a
+        terrace, free private parking and a restaurant. With free WiFi, this 3-star hotel offers room service and a
+        24-hour front desk. The property is non-smoking and is located 5.9 km from Birla Mandir Temple, Jaipur.</p>
+      <p>Guest rooms in the hotel are fitted with a flat-screen TV. The rooms have a private bathroom, free toiletries
+        and bed linen.
+      </p>
+      <p>City Palace is 10 km from Hotel Signature Inn, while Jantar Mantar, Jaipur is 10 km from the property.
+        The nearest airport is Jaipur International Airport, 4 km from the accommodation.</p>
       <h4><b>Most popular facilities</b></h4>
       <div class="mt-4">
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-wifi"></i>  Free WiFi</b>
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-square-parking"></i>  Free parking</b> 
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon  fa-person-military-pointing"></i>  Room service</b>
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-plate-wheat"></i> 24-hour front desk</b>
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-mug-hot"></i> Breakfast</b>
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-wifi"></i> Free
+          WiFi</b>
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-square-parking"></i>
+          Free parking</b>
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i
+            class="fa-solid icon  fa-person-military-pointing"></i> Room service</b>
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-plate-wheat"></i>
+          24-hour front desk</b>
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-mug-hot"></i>
+          Breakfast</b>
 
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-bath"></i> Private bathroom</b>  
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-paw"></i> Pet allowed</b>  
-        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-dumbbell"></i> Gym</b> 
-        
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-bath"></i> Private
+          bathroom</b>
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-paw"></i> Pet
+          allowed</b>
+        <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-dumbbell"></i>
+          Gym</b>
+
         <!-- <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-martini-glass-citrus"></i> Night bar</b>   -->
         <!-- <b class="border border-dark rounded-pill p-3 mb-2 text-primary"><i class="fa-solid icon fa-children"></i> Children</b>   -->
 
 
       </div>
-         </div>
+    </div>
 
-         
-        </div>
-        <div class="row mt-3 ms-4" data-aos="fade-up">
-          <div class="card mb-3" style="max-width: 1200px; max-height: 450px;">
-              <div class="row g-0">
-                
-                <div class="col-sm-8 col-lg-7">
-                  <div class="card-body">
-                    <h5 class="card-title"><b>Get instant discounts</b></h5>
-                    <p class="card-text">Just sign into your Motel.com account and look for the blue Genius logo to save</p>
-              <div class="row" data-aos="fade-down">                   
-                  <div class="col-sm-4 col-lg-2">
-                    <a class="nav-link active btn tr bg-light text-primary border border-primary py-2 my-2" aria-current="page" href="/user/login/"><b>Sign in</b></a>
-                  </div>
-                  <div class="col-sm-4 col-lg-3">
-                    <a class="nav-link active btn bg-light tr text-primary py-2 my-2 " aria-current="page" href="/user/signup/" ><b>Create an account</b></a>
-                </div>
-              </div>              
-            </div>                 
-          </div>
-          <div class="col-sm-4 col-lg-3" data-aos="fade-right">
-            <img src="{% static 'image/Genius.png' %}" class="img-fluid rounded-start " style="max-height: 200px;" alt="...">
+
+  </div>
+  <div class="row mt-3 ms-4" data-aos="fade-up">
+    <div class="card mb-3" style="max-width: 1200px; max-height: 450px;">
+      <div class="row g-0">
+
+        <div class="col-sm-8 col-lg-7">
+          <div class="card-body">
+            <h5 class="card-title"><b>Get instant discounts</b></h5>
+            <p class="card-text">Just sign into your Motel.com account and look for the blue Genius logo to save</p>
+            <div class="row" data-aos="fade-down">
+              <div class="col-sm-4 col-lg-2">
+                <a class="nav-link active btn tr bg-light text-primary border border-primary py-2 my-2"
+                  aria-current="page" href="/user/login/"><b>Sign in</b></a>
+              </div>
+              <div class="col-sm-4 col-lg-3">
+                <a class="nav-link active btn bg-light tr text-primary py-2 my-2 " aria-current="page"
+                  href="/user/signup/"><b>Create an account</b></a>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="col-sm-4 col-lg-3" data-aos="fade-right">
+          <img src="{% static 'image/Genius.png' %}" class="img-fluid rounded-start " style="max-height: 200px;"
+            alt="...">
+        </div>
+      </div>
     </div>
   </div>
-</div> 
+</div>
 
 {% endblock %}

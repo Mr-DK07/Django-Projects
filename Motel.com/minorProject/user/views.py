@@ -110,14 +110,21 @@ def userdetails(request):
 
 
 def payment(request):
+    user=request.session.get('user')
     if request.method=="POST":
         cardHolderName=request.POST.get('cardHolderName')
         cardType=request.POST.get('cardType')
         cardNumber=request.POST.get('cardNumber')
         expirationDate=request.POST.get('expirationDate')
-        cvvNum=request.POST.get('cvvNum')
-        OTP=request.POST.get('OTP')
-        paymentd=paymentDetails(cardHolderName=cardHolderName,cardType=cardType,cardNumber=cardNumber,cvvNum=cvvNum,OTP=OTP,expirationDate=expirationDate).save()
+        
+        #cvvNum=request.POST.get('cvvNum')
+        # OTP=request.POST.get('OTP')
+        paymentd=paymentDetails(cardHolderName=cardHolderName,cardType=cardType,cardNumber=cardNumber,expirationDate=expirationDate).save()
         print(paymentd)
+        if user:
+            x=register.objects.filter(email=user)
+            return HttpResponse("<script> alert('Your hotel is booked successfully.');location.href='/user/index/' </script>")
+        else:
+            return HttpResponse("<script>alert('Please login first...');location.href='/user/login/'</script>")
     return render(request, 'user/payment.html')
 
